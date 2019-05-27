@@ -1,0 +1,12 @@
+GO: {
+  a: un,
+  demo: fun
+}
+AO:{
+  b: un,
+  c: un,
+  a: un,
+  e: fun
+
+}
+fun

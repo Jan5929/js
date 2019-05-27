@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var num = window.prompt('input')
+  var str = ""
+  function a(num) {
+    for (var i =num.length - 1; i >= 0; i--) {
+      if (num.length > 1) {
+        a(num[i])
+      }
+    }
+  }
+  function test(val, index, num) {
+    switch (num.length) {
+      case 1:
+       return number(val) + '元'
+      case 2:
+        console.log(val, index, num)
+    }
+  }
+  function number(val) {
+    switch (+val) {
+      case 0:
+        return '零'
+      case 1:
+        return "壹"
+      case 2:
+        return "贰"
+      case 3:
+        return "叁"
+      case 4:
+        return "肆"
+      case 5:
+        return "伍"
+      case 6:
+        return "陆"
+      case 7:
+        return "柒"
+      case 8:
+        return "扒"
+      case 9:
+        return "玖"
+    }
+  }
+  var i =0
+  var a = 1
+  while (a) {
+    i++
+    console.log('a')
+  }
+  console.log(str)
+</script>
+</body>
+</html>
