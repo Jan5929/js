@@ -1,0 +1,10 @@
+1,识别各种浏览器及平台
+// 浏览器
+let inBrowser = typeof window !== 'undefined'
+
+// 运行环境是微信
+let inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform
+let weexPlatform = inWeex && WXEnvironment.platform.toUpperCase()
+
+// 浏览器 UA 判断
+let UA = inBrowser && window.navigator.userAgent.toLowerCase()
