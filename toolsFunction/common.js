@@ -1,5 +1,5 @@
 // 时间格式化
-function deteFormater(formate = 'YYYY-MM-DD HH:mm:ss', t) {
+function dateFormated(formate = 'YYYY-MM-DD HH:mm:ss', t) {
   const date = t ? new Date(t) : new Date(),
     Y = date.getFullYear() + '',
     M = date.getMonth() + 1,
