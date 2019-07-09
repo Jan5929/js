@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      #container{
+        widows: 200px;
+        height: 200px;
+        border: 1px solid red
+      }
+    </style>
+</head>
+<body>
+  <div id="container">0</div>
+  <button id="but">重置防抖</button>
+  <script src="index.js"></script>
+  <script>
+    var setUseAction = underscore(sayHi, 10000, true)
+    container.onmousemove = setUseAction
+    document.getElementById("but").addEventListener('click', function(){
+      setUseAction.cancel()
+    })
+  </script>
+</body>
+</html>
