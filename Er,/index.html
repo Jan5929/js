@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="but" onclick="debounce(sayHi)">防抖</button>
+    <script src="index.js">
+        const but = document.getElementById('but')
+        but.onclick = debounce(sayHi)
+    </script>
+</body>
+</html>
