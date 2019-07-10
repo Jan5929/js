@@ -51,8 +51,8 @@ function debounce(fn, await) {
 待解决。。。。。。
 
 */
-var count = 1
-var container = document.getElementById('container')
+let count = 1
+let container = document.getElementById('container')
 function sayHi(e) {
   container.innerHTML = count++;
   console.log(e)
@@ -72,13 +72,13 @@ function throttle(fn, await) {
 }
 
 function underscore(fn, await, immediate) {  // 进阶版防抖
-  var timeout, result
-  var newDebounce = function () {
-    var context = this
-    var args = arguments
+  let timeout, result
+  let newDebounce = function () {
+    let context = this
+    let args = arguments
     if (timeout) clearInterval(timeout)
     if (immediate) {
-      var callNow = !timeout
+      let callNow = !timeout
       timeout = setTimeout(() => {
         timeout = null
       }, await)
@@ -90,7 +90,7 @@ function underscore(fn, await, immediate) {  // 进阶版防抖
     }
     return result
   }
-  
+
   newDebounce.cancel = function() {
     clearTimeout(timeout);
     timeout = null;
