@@ -194,3 +194,58 @@ WeakMap:
 
 
 */
+
+//5, setTimeout、Promise、Async/Await 的区别 ?
+
+/*
+先了解事件循环机制
+
+js 的事件分两种，宏任务(macro-task) 和 微任务(micro-task)
+
+宏任务：包括整体代码 script， setTimeout, setInterval
+
+微任务：Promise.then(非new Promise)，process.nextTick(node中)
+
+事件执行顺序： 宏任务 -> 微任务 
+
+setTimeOut执行需要满足两个条件：
+                           主进程必须是空闲的状态，如果到时间了，主进程不空闲也不会执行你的回掉函数 
+                           这个回掉函数需要等到插入异步队列时前面的异步函数都执行完了，才会执行 
+
+
+
+
+Promise、Async/Await
+
+首先，new Promise是同步的任务，会被放到主进程中去立即执行。而.then()函数是异步任务会放到异步队列中去，那什么时候放到异步队列中去呢？当你的promise状态结束的时候，就会立即放进异步队列中去了。
+带async关键字的函数会返回一个promise对象，如果里面没有await，执行起来等同于普通函数；如果没有await，async函数并没有很厉害是不是
+await 关键字要在 async 关键字函数的内部，await 写在外面会报错；await如同他的语意，就是在等待，等待右侧的表达式完成。此时的await会让出线程，
+阻塞async内后续的代码，先去执行async外的代码。等外面的同步代码执行完毕，才会执行里面的后续代码。就算await的不是promise对象，是一个同步函数，也会等这样操作
+*/
+// async function async1() {
+//   console.log('async1 start');
+//   await async2();
+//   console.log('async1 end');
+// }
+// async function async2() {
+//   console.log('async2');
+// }
+// console.log('script start');
+// async1();
+// new Promise(function(resolve) {
+//   console.log('promise1');
+//   resolve();
+// }).then(function() {
+//   console.log('promise2');
+// });
+// console.log('script end');
+// 1、执行console.log('script start')，输出script start；
+// 2、执行setTimeout，是一个异步动作，放入宏任务异步队列中；
+// 3、执行async1()，输出async1 start，继续向下执行；
+// 4、执行async2()，输出async2，并返回了一个promise对象，await让出了线程，把返回的promise加入了微任务异步队列，所以async1()下面的代码也要等待上面完成后继续执行;
+// 5、执行 new Promise，输出promise1，然后将resolve放入微任务异步队列；
+// 6、执行console.log('script end')，输出script end；
+// 7、到此同步的代码就都执行完成了，然后去微任务异步队列里去获取任务
+// 8、然后执行resolve（new Promise的），输出了promise2。
+// 9、接下来执行resolve（async2返回的promise返回的），输出了async1 end。
+// 10、最后执行setTimeout，输出了setTimeout。
