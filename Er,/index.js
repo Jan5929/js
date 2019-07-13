@@ -121,8 +121,8 @@ Set 实例的属性和方法
         values() 返回键值    keys values 都一样，
         entries() 返回键值对
         forEach() 使用回调函数遍历每个成员
-           
-           
+
+
 需要特别指出的是，Set的遍历顺序就是插入顺序。这个特性有时非常有用，比如使用 Set 保存一个回调函数列表，调用时就能保证按照添加顺序调用。
 
 
@@ -135,7 +135,7 @@ WeakSet：
 Map：
 
    Map js对象，本质上是键值对的集合，传统的对象只能用字符串来当作键
-   
+
    ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。
 
    Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应
@@ -206,11 +206,11 @@ js 的事件分两种，宏任务(macro-task) 和 微任务(micro-task)
 
 微任务：Promise.then(非new Promise)，process.nextTick(node中)
 
-事件执行顺序： 宏任务 -> 微任务 
+事件执行顺序： 宏任务 -> 微任务
 
 setTimeOut执行需要满足两个条件：
-                           主进程必须是空闲的状态，如果到时间了，主进程不空闲也不会执行你的回掉函数 
-                           这个回掉函数需要等到插入异步队列时前面的异步函数都执行完了，才会执行 
+                           主进程必须是空闲的状态，如果到时间了，主进程不空闲也不会执行你的回掉函数
+                           这个回掉函数需要等到插入异步队列时前面的异步函数都执行完了，才会执行
 
 
 
@@ -239,7 +239,7 @@ await 关键字要在 async 关键字函数的内部，await 写在外面会报�
 //   console.log('promise2');
 // });
 // console.log('script end');
-// 1、执行console.log('script start')，输出script start；
+// 1、执行console.log('script start')，输出script start；xk
 // 2、执行setTimeout，是一个异步动作，放入宏任务异步队列中；
 // 3、执行async1()，输出async1 start，继续向下执行；
 // 4、执行async2()，输出async2，并返回了一个promise对象，await让出了线程，把返回的promise加入了微任务异步队列，所以async1()下面的代码也要等待上面完成后继续执行;
@@ -249,3 +249,11 @@ await 关键字要在 async 关键字函数的内部，await 写在外面会报�
 // 8、然后执行resolve（new Promise的），输出了promise2。
 // 9、接下来执行resolve（async2返回的promise返回的），输出了async1 end。
 // 10、最后执行setTimeout，输出了setTimeout。
+
+
+
+// 6, 编写一个程序将数组扁平化去并除其中重复部分数据，最终得到一个升序且不重复的数组
+let newArr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10]
+const a = Array.from(new Set(newArr.flat(Infinity))).sort((a,b)=>{ return a-b})
+console.log(a)
+// flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。
