@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/list/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "2009Pool",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f00",
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志"
+      },
+      {
+        "pagePath": "pages/list/index",
+        "text": "数组"
+      }
+    ],
+    "color": "#f5e",
+    "selectedColor": "#fff",
+    "backgroundColor": "#33CC99",
+    "position": "bottom"
+  }
+}

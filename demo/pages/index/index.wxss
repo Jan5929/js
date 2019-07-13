@@ -1,0 +1,15 @@
+/**index.wxss**/
+page{
+  width: 100%;
+  height: 100%;
+}
+.container{
+  height: 100%;
+  padding: 0;
+}
+.usermotto {
+  width: 100%;
+}
+.usermotto image{
+    width: 100%;
+  }
