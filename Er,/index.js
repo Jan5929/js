@@ -253,7 +253,63 @@ await 关键字要在 async 关键字函数的内部，await 写在外面会报�
 
 
 // 6, 编写一个程序将数组扁平化去并除其中重复部分数据，最终得到一个升序且不重复的数组
-let newArr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10]
-const a = Array.from(new Set(newArr.flat(Infinity))).sort((a,b)=>{ return a-b})
-console.log(a)
+// let newArr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10]
+// const a = Array.from(new Set(newArr.flat(Infinity))).sort((a,b)=>{ return a-b})
+// console.log(a)
 // flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。
+
+
+// 7, JS 异步解决方案的发展历程以及优缺点
+
+// 1. 回调函数（callback）
+// setTimeout(() => {
+//  callback 函数体
+// }, 1000)
+
+// 缺点：回调地狱，不能用 try catch 捕获错误，不能 return
+
+// 回调地狱的根本问题在于：
+                       // 缺乏顺序性，
+                       // 嵌套函数存在耦合性，一但有所改动，就会导致整个都有所变动
+                       // 嵌套过多，错误很难处理
+
+// 优点：
+       // 解决了同步的问题
+
+// 2 Promise 为了解决callback的问题而产生的
+/*
+*  Promise 实现了链式调用 每次then后返回的都是全新的promise 在then中return，return结果就会被Promise.resolve()包装
+*
+* 优点： 解决了回调地狱的问题
+*
+* 缺点，无法取消promise，错误需要用函数捕获
+*
+*
+* */
+
+//3， Generator
+
+/*
+*  function *funName() {
+*   yield function(){}
+*   yield function(){}
+*   yield function(){}
+*   yield function(){}
+*   yield function(){}
+* }
+*  let it = funName()
+*  it.next()
+*
+*
+* 特点: 可以控制函数的执行
+* */
+
+// 4 Async/await
+
+/*
+*  是异步的终极解决方法
+*  优点： 代码清晰， 不像Promise一样写很多then
+*  缺点： 异步改造为同步。
+* */
+
+
