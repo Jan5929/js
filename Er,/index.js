@@ -313,3 +313,19 @@ await 关键字要在 async 关键字函数的内部，await 写在外面会报�
 * */
 
 
+// 8, 如何实现一个 new?
+
+/*
+*  先了解new操作符干了什么
+*  1.创建一个空对象，空对象的_proto_属性指向构造函数的原型对象
+*  2.把上面创建的空对象赋值构造函数内部的this， 用构造函数的内部方法修改空对象
+*  3.若构造函数返回一个非基本类型的值，则返回这个值，否则返回创建的空对象
+*  function(fn, ...arg) {
+*    const obj = Object.create(fn.prototype)
+*    const ret = fn.apply(obj, arg)
+*    return obj
+* }
+* */
+
+
+
