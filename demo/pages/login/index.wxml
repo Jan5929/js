@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="usermotto">
+<!--   <image src="{{src}}"></image>-->
+  </view>
+  <view class='icon-postion'>
+<!--   <image src="{{icon}}"></image>-->
+  </view>
+</view>

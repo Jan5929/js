@@ -8,7 +8,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    src: '../../assest/images/bg.png'
+    src: '../../assest/images/bg.png',
+    icon: '../../assest/images/icon.png'
   },
   //事件处理函数
   bindViewTap: function() {

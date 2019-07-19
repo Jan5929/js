@@ -6,10 +6,19 @@ page{
 .container{
   height: 100%;
   padding: 0;
+  position: relative
 }
 .usermotto {
   width: 100%;
 }
 .usermotto image{
-    width: 100%;
-  }
+  width: 100%;
+}
+.icon-postion{
+  position: absolute;
+
+}
+.icon-postion image{
+  width: 164rpx;
+  height: 164rpx;
+}
