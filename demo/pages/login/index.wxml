@@ -1,9 +1,21 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="usermotto">
-<!--   <image src="{{src}}"></image>-->
+ <view class="header">
+  <view class="top-bg">
+    <image src="{{bg}}"></image>
   </view>
-  <view class='icon-postion'>
-<!--   <image src="{{icon}}"></image>-->
+  <!-- 公共头部组件 -->
+  <x-page-title class="project-title">2009POOL</x-page-title>
+  <view class="logo-img">
+    <image src="{{icon}}"></image>
   </view>
+ </view>
+ <view class="but-quick-login">
+  <image src="{{ wechat}}"></image>
+  <button open-type="getUserInfo" type="primary" bindtap="handleLogin">微信账号快速登录</button>
+ </view>
+ <view class="but-manual-login">
+  <button type="a" bindtap="handleLogin">手机号/邮箱登录</button>
+ </view>
+ <x-page-footer class="x-page-footer"/>
 </view>

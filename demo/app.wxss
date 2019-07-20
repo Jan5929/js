@@ -1,10 +1,33 @@
 /**app.wxss**/
+/** 重置按钮样式 **/
+button[type=primary] {
+  background-color: #33CC99;
+}
+button[disabled][type=primary] {
+  background-color: rgba(51, 204, 153, 0.6);
+}
+.button-hover[type=primary] {
+  background-color: rgba(51, 204, 153, 0.9);
+}
+button[type=a] {
+  background-color: #ffffff;
+}
+button[disabled][type=a] {
+  background-color: rgba(245, 245, 245, 0.3);
+}
+.button-hover[type=a] {
+  background-color: rgba(245, 245, 245, 0.3);
+}
 .container {
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+.container .project-title{
+  width: 100%;
+  font-size: 36rpx;
+  color: #ffffff;
+  text-align: center;
+}

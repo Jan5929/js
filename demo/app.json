@@ -4,12 +4,16 @@
     "pages/logs/logs",
     "pages/list/index"
   ],
+  "usingComponents": {
+    "x-page-title": "components/x-page-title/index",
+    "x-page-footer": "components/x-page-footer/index"
+  },
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "2009Pool",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#f00",
+    "backgroundColor": "#fff",
     "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json"
