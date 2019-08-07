@@ -327,5 +327,20 @@ await 关键字要在 async 关键字函数的内部，await 写在外面会报�
 * }
 * */
 
+// 9, // a 等于什么的时候会打印1
+/*
+var a = ?;
+if(a == 1 && a == 2 && a == 3){
+ 	console.log(1);
+}
+重点：== 会进行隐式转换 从而调用toString() 所以只需重写toString() 即可
+
+var a = {
+  i: 1,
+  toString: function() {
+    return a.i++
+  }
+}
+*/
 
 

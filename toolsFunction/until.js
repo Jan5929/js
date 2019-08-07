@@ -156,3 +156,23 @@ function isPCBroswer() {
 		, l = "windows mobile" == e.match(/windows mobile/i);
 	return !(t || i || r || n || a || o || s || l)
 }
+
+// 13
+// 解决浮点数 乘法
+function accMul(arg1, arg2) {
+	let m = 0
+	if (!arg1 || !arg2) return 0
+	const s1 = arg1.toString()
+	const s2 = arg2.toString()
+	try {
+		m += s1.split('.')[1].length
+	} catch (e) {
+		console.log()
+	}
+	try {
+		m += s2.split('.')[1].length
+	} catch (e) {
+		console.log()
+	}
+	return Number(s1.replace('.', '')) * Number(s2.replace('.', '')) / Math.pow(10, m)
+}
